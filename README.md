@@ -18,16 +18,15 @@ Note: This is a single-file application for simplicity. No external CSS/JS files
 
 ## 🛡️ Security 🏗️ Architecture
 
-┌─────────────────┐      ┌──────────────────┐     ┌─────────────────┐
-│  User Request   │────▶│  PHP Session     │────▶│  random_int()   │
-│  (POST/GET)     │      │ State Management │     │  CSPRNG (OS)    │
-└─────────────────┘      └──────────────────┘     └─────────────────┘
-         │                                               │
-         ▼                                               ▼
-┌─────────────────┐     ┌──────────────────┐      ┌─────────────────┐
-│  HTML Output    │◀────│  htmlspecialchars│◀────│  Character Pool │
-│  (Sanitized)    │     │  XSS Protection  │      │  A-Z,a-z,0-9,!@#│
-└─────────────────┘     └──────────────────┘      └─────────────────┘
+## 🏗️ Security Architecture
+
+```mermaid
+flowchart LR
+    A[User Request<br/>POST/GET] --> B[PHP Session<br/>State Management]
+    B --> C[random_int()<br/>CSPRNG OS]
+    C --> D[Character Pool<br/>A-Z,a-z,0-9,!@#]
+    D --> E[htmlspecialchars<br/>XSS Protection]
+    E --> F[HTML Output<br/>Sanitized]
 
 ## 🔒 Security Features
 

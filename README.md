@@ -18,15 +18,14 @@ Note: This is a single-file application for simplicity. No external CSS/JS files
 
 ## 🛡️ Security 🏗️ Architecture
 
-## 🏗️ Security Architecture
-
-```mermaid
-flowchart LR
-    A[User Request<br/>POST/GET] --> B[PHP Session<br/>State Management]
-    B --> C[random_int()<br/>CSPRNG OS]
-    C --> D[Character Pool<br/>A-Z,a-z,0-9,!@#]
-    D --> E[htmlspecialchars<br/>XSS Protection]
-    E --> F[HTML Output<br/>Sanitized]
+| Step | Component | Description |
+|:----:|:----------|:------------|
+| 1 | **User Request** | `POST` / `GET` form submission |
+| 2 | **PHP Session** | State management (length & password storage) |
+| 3 | **random_int()** | CSPRNG using OS entropy (`/dev/urandom`) |
+| 4 | **Character Pool** | `A-Z` `a-z` `0-9` `!@#$%^&*` |
+| 5 | **htmlspecialchars()** | XSS protection — sanitizes output |
+| 6 | **HTML Output** | Safe, rendered password display |
 
 ## 🔒 Security Features
 

@@ -1,9 +1,9 @@
+This file needs re-writing!
+
 # 🔐 PHP Password Generator
 
 A lightweight, secure password generator built with pure PHP and modern web standards. Features cryptographically secure randomization, real-time length adjustment, and one-click clipboard copying—all without external dependencies.
-Note: This is a single-file application for simplicity. No external CSS/JS files required.
-
-![PHP Password Generator](Screenshot.png)
+Note: This is a single-file application for simplicity.
 
 ## ✨ Features
 

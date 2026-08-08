@@ -3,64 +3,15 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Generate Password · by PHP script</title>
-        <style>
-            body {
-                background-color: #1e7adc;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                min-height: 100vh;
-                margin: 0;
-                font-family: Arial, sans-serif;
-            }
-            h1 {
-                font-family: 'Lucida Calligraphy', cursive;
-                margin: 10px;
-                padding: 25px;
-                text-align: center;
-                color: white;
-            }
-            form {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 30px;
-                border-radius: 10px;
-                text-align: center;
-            }
-            input[type="text"] {
-                padding: 10px;
-                font-size: 16px;
-                margin-bottom: 10px;
-                width: 350px;
-                border-radius: 15px;
-            }
-            input[type="range"] {
-                display: block;
-                margin: 10px auto;
-                width: 350px;
-            }
-            button {
-                padding: 12px 24px;
-                margin: 5px;
-                cursor: pointer;
-                background: transparent;
-                border: 2px solid white;
-                color: white;
-                font-size: 16px;
-                border-radius: 15px;
-                transition: all 0.3s ease;
-            }
-            button:hover {
-                background: white;
-                color: #1e7adc;
-            }
-        </style>
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Generate Password · by PHP script</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="container">
         <h1>Generate your own password for maximum security!</h1>
 
         <?php
@@ -107,10 +58,18 @@
 
             <div>
                 <button type="submit" name="generate">Generate 🔐</button>
-                <button type="button" onclick="navigator.clipboard.writeText(document.querySelector('input[type=text]').value)">Copy 📋</button>
+                <button type="button" id="copy">Copy 📋</button>
             </div>
         </form>
+    </div>
 
-    </body>
+    <div id="modal" class="modal-overlay">
+    <div class="modal-box">
+        <button id="closeBtn" class="modal-close">×</button>
+        <p>The password is copied successfully!</p>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>
-

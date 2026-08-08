@@ -1,0 +1,113 @@
+body {
+    background: linear-gradient(189deg, #667eea 16%, #764ba2 64%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 650px;
+    height: 500px;
+    text-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    background-color: #0ebbea;
+    background: rgba(255, 255, 255, 0.54);
+    border: 3px solid #00008b;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 4px;
+    box-shadow: 18px 17px 12px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+    animation-name: zoomInAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+@keyframes zoomInAnimation {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+h1 {
+    font-family: 'Lucida Calligraphy', cursive;
+    margin: 10px;
+    padding: 25px;
+    text-align: center;
+    color: #00008b;
+}
+form {
+    padding: 55px;
+    text-align: center;
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 350px;
+    border-radius: 15px;
+}
+input[type="range"] {
+    display: block;
+    margin: 10px auto;
+    width: 350px;
+}
+button {
+    padding: 12px 24px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #1e7adc;
+    border: 2px solid #00008b;
+    color: white;
+    font-size: 16px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 12px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 20px;
+}
+button:hover {
+    background: white;
+    color: #1e7adc;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal-overlay.show {
+    display: block;
+}
+.modal-box {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    animation-name: zoomInAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+.modal-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+}
